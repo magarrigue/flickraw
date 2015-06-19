@@ -36,10 +36,10 @@ module FlickRaw
     
     def self.build(methods); methods.each { |m| build_request m } end
 
-    def initialize # :nodoc:
-      if FlickRaw.api_key.nil?
-        raise FlickrAppNotConfigured.new("No API key defined!")
-      end
+    def initialize(api_key, shared_secret) # :nodoc:
+      # if FlickRaw.api_key.nil?
+      #   raise FlickrAppNotConfigured.new("No API key defined!")
+      # end
       @oauth_consumer = OAuthClient.new(FlickRaw.api_key, FlickRaw.shared_secret)
       @oauth_consumer.proxy = FlickRaw.proxy
       @oauth_consumer.check_certificate = FlickRaw.check_certificate
@@ -157,10 +157,10 @@ module FlickRaw
 
   class << self
     # Your flickr API key, see http://www.flickr.com/services/api/keys for more information
-    attr_accessor :api_key
+    # attr_accessor :api_key
     
-    # The shared secret of _api_key_, see http://www.flickr.com/services/api/keys for more information
-    attr_accessor :shared_secret
+    # # The shared secret of _api_key_, see http://www.flickr.com/services/api/keys for more information
+    # attr_accessor :shared_secret
     
     # Use a proxy
     attr_accessor :proxy

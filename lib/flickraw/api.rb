@@ -40,7 +40,7 @@ module FlickRaw
       # if FlickRaw.api_key.nil?
       #   raise FlickrAppNotConfigured.new("No API key defined!")
       # end
-      @oauth_consumer = OAuthClient.new(FlickRaw.api_key, FlickRaw.shared_secret)
+      @oauth_consumer = OAuthClient.new(api_key, shared_secret)
       @oauth_consumer.proxy = FlickRaw.proxy
       @oauth_consumer.check_certificate = FlickRaw.check_certificate
       @oauth_consumer.ca_file = FlickRaw.ca_file

@@ -3,8 +3,7 @@ $:.unshift lib unless $:.include?(lib)
 
 require 'flickraw'
 
-FlickRaw.api_key = ENV['FLICKRAW_API_KEY']
-FlickRaw.shared_secret = ENV['FLICKRAW_SHARED_SECRET']
+def flickr; $flickraw ||= FlickRaw::Flickr.new ENV['FLICKRAW_API_KEY'], ENV['FLICKRAW_SHARED_SECRET'] end
 #FlickRaw.secure = false
 
 flickr.access_token = ENV['FLICKRAW_ACCESS_TOKEN']

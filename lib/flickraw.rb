@@ -18,4 +18,4 @@ end
 #
 #  recent_photos = flickr.photos.getRecent
 #  puts recent_photos[0].title
-def flickr; $flickraw ||= FlickRaw::Flickr.new end
+# def flickr; $flickraw ||= FlickRaw::Flickr.new end
